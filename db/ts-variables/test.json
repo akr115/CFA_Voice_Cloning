@@ -1,0 +1,33 @@
+{
+  "createdAt": 1682926606794,
+  "updatedAt": 1682926606794,
+  "deletedAt": 0,
+  "createdFirstAt": 1682926606794,
+  "classification": "const",
+  "comments": [],
+  "isExported": false,
+  "name": "test",
+  "slug": "test",
+  "operationRelativeTypescriptFilePath": "src/playhtRequest.test.ts",
+  "type": {
+    "rawType": "() => any",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async () => {\n  const persona = await getPersona();\n  if (!persona) {\n    return;\n  }\n\n  const result = await playhtRequest(persona, \"GET:getVoices\");\n\n  console.dir({ result }, { depth: 99 });\n}",
+  "description": "https://docs.play.ht/reference/api-getting-started",
+  "id": "ocnrqrtmzzwofmpmcgwnbava"
+}

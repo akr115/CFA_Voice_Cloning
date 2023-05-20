@@ -1,0 +1,301 @@
+{
+  "createdAt": 1682926596971,
+  "updatedAt": 1682926596971,
+  "deletedAt": 0,
+  "createdFirstAt": 1682926596971,
+  "id": "playhtvoice",
+  "name": "PlayhtVoice",
+  "slug": "playhtvoice",
+  "operationRelativeTypescriptFilePath": "src/PlayhtVoice.ts",
+  "hasGeneric": false,
+  "isExported": true,
+  "rawText": "export type PlayhtVoice = {\n  name: string;\n  sample: string;\n  value: string;\n  voiceId: string;\n  age: \"old\" | \"adult\" | \"youth\";\n  accent: \"canadian\" | \"american\" | \"british\";\n  gender: \"male\" | \"female\";\n  loudness: \"low\" | \"neutral\" | \"high\" | \"whisper\";\n  style: \"narrative\" | \"videos\" | \"training\" | \"advertising\";\n  tempo: \"slow\" | \"neutral\" | \"fast\";\n  texture: \"round\" | \"thick\" | \"gravelly\" | \"smooth\";\n  hq: boolean;\n  isExperimental: boolean;\n  isNew: boolean;\n  isPopular: boolean;\n  language: string;\n  languageCode: string;\n};",
+  "extensions": [],
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "sample": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "voiceId": {
+          "type": "string"
+        },
+        "age": {
+          "type": "string",
+          "enum": [
+            "old",
+            "adult",
+            "youth"
+          ]
+        },
+        "accent": {
+          "type": "string",
+          "enum": [
+            "canadian",
+            "american",
+            "british"
+          ]
+        },
+        "gender": {
+          "type": "string",
+          "enum": [
+            "male",
+            "female"
+          ]
+        },
+        "loudness": {
+          "type": "string",
+          "enum": [
+            "low",
+            "neutral",
+            "high",
+            "whisper"
+          ]
+        },
+        "style": {
+          "type": "string",
+          "enum": [
+            "narrative",
+            "videos",
+            "training",
+            "advertising"
+          ]
+        },
+        "tempo": {
+          "type": "string",
+          "enum": [
+            "slow",
+            "neutral",
+            "fast"
+          ]
+        },
+        "texture": {
+          "type": "string",
+          "enum": [
+            "round",
+            "thick",
+            "gravelly",
+            "smooth"
+          ]
+        },
+        "hq": {
+          "type": "boolean"
+        },
+        "isExperimental": {
+          "type": "boolean"
+        },
+        "isNew": {
+          "type": "boolean"
+        },
+        "isPopular": {
+          "type": "boolean"
+        },
+        "language": {
+          "type": "string"
+        },
+        "languageCode": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "sample",
+        "value",
+        "voiceId",
+        "age",
+        "accent",
+        "gender",
+        "loudness",
+        "style",
+        "tempo",
+        "texture",
+        "hq",
+        "isExperimental",
+        "isNew",
+        "isPopular",
+        "language",
+        "languageCode"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "name",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "sample",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "value",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "voiceId",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "age",
+          "required": true,
+          "schema": {
+            "enum": [
+              "old",
+              "adult",
+              "youth"
+            ],
+            "type": "string"
+          }
+        },
+        {
+          "name": "accent",
+          "required": true,
+          "schema": {
+            "enum": [
+              "canadian",
+              "american",
+              "british"
+            ],
+            "type": "string"
+          }
+        },
+        {
+          "name": "gender",
+          "required": true,
+          "schema": {
+            "enum": [
+              "male",
+              "female"
+            ],
+            "type": "string"
+          }
+        },
+        {
+          "name": "loudness",
+          "required": true,
+          "schema": {
+            "enum": [
+              "low",
+              "neutral",
+              "high",
+              "whisper"
+            ],
+            "type": "string"
+          }
+        },
+        {
+          "name": "style",
+          "required": true,
+          "schema": {
+            "enum": [
+              "narrative",
+              "videos",
+              "training",
+              "advertising"
+            ],
+            "type": "string"
+          }
+        },
+        {
+          "name": "tempo",
+          "required": true,
+          "schema": {
+            "enum": [
+              "slow",
+              "neutral",
+              "fast"
+            ],
+            "type": "string"
+          }
+        },
+        {
+          "name": "texture",
+          "required": true,
+          "schema": {
+            "enum": [
+              "round",
+              "thick",
+              "gravelly",
+              "smooth"
+            ],
+            "type": "string"
+          }
+        },
+        {
+          "name": "hq",
+          "required": true,
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "isExperimental",
+          "required": true,
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "isNew",
+          "required": true,
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "isPopular",
+          "required": true,
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "language",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "languageCode",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "PlayhtVoice",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

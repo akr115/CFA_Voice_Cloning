@@ -1,0 +1,108 @@
+{
+  "createdAt": 1682926609938,
+  "updatedAt": 1682926609938,
+  "deletedAt": 0,
+  "createdFirstAt": 1682926609938,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/playhtRequest.ts",
+  "commentsInside": [],
+  "rawText": " async (\n  /**\n   * Can be a persona (has the same keys)\n   */\n  credentials: { playhtSecret?: string; playhtUserId?: string },\n\n  endpoint:\n    | \"GET:getVoices?ultra=true\"\n    | \"GET:getVoices\"\n    | \"GET:getClonedVoices\"\n    | \"POST:tts\",\n\n  /**\n    For convert:\n\n   voice is the id of the voice used to synthesize the text. Refer to the Voices reference file file for more details.\n\ncontent is an array of strings, where each string represents a paragraph in plain text format.\n\nspeed this controls how fast the output would be ranges from 0.5 - 1.5. optional\n\npreset this controls the quality of the output audio, 'real-time', ‘balanced’, ‘low-latency’, 'high-quality'. optional\n\n\nOLD ONES:\n\n\nvoice is the ID of the voice used to synthesize the text. Refer to the Voices reference file for more details.\nnote Only one of content or ssml can be passed:\n\ncontent is an array of strings, where each string represents a paragraph in plain text format.\n\nssml is an array of strings, where each string represents a paragraph in SSML format. Learn more about SSML. Not all SSML features are supported with all voices.\n\ntitle is a field to name your file. You can use this name to find the audio in your Play.ht dashboard.\n\nnarrationStyle is a string representing the tone and accent of the voice to read the text. Make sure the value for narrationStyle is supported by the voice in your request. Refer to the Voices reference file for more details.\n\nglobalSpeed is a string in the format <number>%, where <number> is in the closed interval of [20, 200]. Use this to speed-up, or slow-down the speaking rate of the speech.\n\npronunciations is an array of key-value pair objects, where key is the source string (e.g. \"Play.ht\"), and value is the target pronunciation (e.g. \"Play dot H T\"). Use this when you want to customize the pronunciation of a certain word/phrase (e.g. your brand name).\n\ntrimSilence is a boolean value. When enabled, the audio will be trimmed to remove any silence from the end of the file.\n\ntranscriptionId - Pass this to update an existing audio file\n\n   \n     */\n  body?: { [key: string]: any }\n) => {\n  if (!credentials.playhtSecret || !credentials.playhtUserId) {\n    return { isSuccessful: false, message: \"No play.ht credentials\" };\n  }\n\n  const baseUrl = \"https://play.ht/api/v2/\";\n  const [method, endpointUrl] = endpoint.split(\":\");\n\n  const headers = {\n    Authorization: `Bearer ${credentials.playhtSecret}`,\n    \"X-User-ID\": credentials.playhtUserId,\n    \"content-type\": \"application/json\",\n    accept: \"*/*\",\n  };\n  console.log({ headers });\n  const res = await fetch(`${baseUrl}${endpointUrl}`, {\n    method,\n    body: body ? JSON.stringify(body) : undefined,\n    headers,\n  }).catch((err) => {\n    throw err; // Error caused by fetch\n  });\n\n  console.log({ statusText: res.statusText });\n  try {\n    const text = await res.text();\n\n    console.log({ text });\n    const chunks = text.split(\"data: \");\n    const jsonString = chunks.pop()?.trim();\n    if (!jsonString) {\n      return;\n    }\n    const json = JSON.parse(jsonString);\n    // const obj = await returned.json();\n\n    return json;\n  } catch (e) {\n    console.log(`parsing response error `, e);\n  }\n}",
+  "name": "playhtRequest",
+  "slug": "playht-request",
+  "parameters": [
+    {
+      "name": "credentials",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "playhtSecret": {
+            "type": "string"
+          },
+          "playhtUserId": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Can be a persona (has the same keys)"
+      },
+      "simplifiedSchema": {
+        "fullComment": "Can be a persona (has the same keys)",
+        "properties": [
+          {
+            "name": "playhtSecret",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "playhtUserId",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "type": "object"
+      },
+      "required": true
+    },
+    {
+      "name": "endpoint",
+      "schema": {
+        "type": "string",
+        "enum": [
+          "GET:getVoices?ultra=true",
+          "GET:getVoices",
+          "GET:getClonedVoices",
+          "POST:tts"
+        ]
+      },
+      "simplifiedSchema": {
+        "enum": [
+          "GET:getVoices?ultra=true",
+          "GET:getVoices",
+          "GET:getClonedVoices",
+          "POST:tts"
+        ],
+        "type": "string"
+      },
+      "required": true
+    },
+    {
+      "name": "body",
+      "schema": {
+        "type": "object",
+        "description": "For convert:\n\nvoice is the id of the voice used to synthesize the text. Refer to the Voices reference file file for more details.\n\ncontent is an array of strings, where each string represents a paragraph in plain text format.\n\nspeed this controls how fast the output would be ranges from 0.5 - 1.5. optional\n\npreset this controls the quality of the output audio, 'real-time', ‘balanced’, ‘low-latency’, 'high-quality'. optional\n\n\nOLD ONES:\n\n\nvoice is the ID of the voice used to synthesize the text. Refer to the Voices reference file for more details. note Only one of content or ssml can be passed:\n\ncontent is an array of strings, where each string represents a paragraph in plain text format.\n\nssml is an array of strings, where each string represents a paragraph in SSML format. Learn more about SSML. Not all SSML features are supported with all voices.\n\ntitle is a field to name your file. You can use this name to find the audio in your Play.ht dashboard.\n\nnarrationStyle is a string representing the tone and accent of the voice to read the text. Make sure the value for narrationStyle is supported by the voice in your request. Refer to the Voices reference file for more details.\n\nglobalSpeed is a string in the format <number>%, where <number> is in the closed interval of [20, 200]. Use this to speed-up, or slow-down the speaking rate of the speech.\n\npronunciations is an array of key-value pair objects, where key is the source string (e.g. \"Play.ht\"), and value is the target pronunciation (e.g. \"Play dot H T\"). Use this when you want to customize the pronunciation of a certain word/phrase (e.g. your brand name).\n\ntrimSilence is a boolean value. When enabled, the audio will be trimmed to remove any silence from the end of the file.\n\ntranscriptionId - Pass this to update an existing audio file"
+      },
+      "simplifiedSchema": {
+        "fullComment": "For convert:\n\nvoice is the id of the voice used to synthesize the text. Refer to the Voices reference file file for more details.\n\ncontent is an array of strings, where each string represents a paragraph in plain text format.\n\nspeed this controls how fast the output would be ranges from 0.5 - 1.5. optional\n\npreset this controls the quality of the output audio, 'real-time', ‘balanced’, ‘low-latency’, 'high-quality'. optional\n\n\nOLD ONES:\n\n\nvoice is the ID of the voice used to synthesize the text. Refer to the Voices reference file for more details. note Only one of content or ssml can be passed:\n\ncontent is an array of strings, where each string represents a paragraph in plain text format.\n\nssml is an array of strings, where each string represents a paragraph in SSML format. Learn more about SSML. Not all SSML features are supported with all voices.\n\ntitle is a field to name your file. You can use this name to find the audio in your Play.ht dashboard.\n\nnarrationStyle is a string representing the tone and accent of the voice to read the text. Make sure the value for narrationStyle is supported by the voice in your request. Refer to the Voices reference file for more details.\n\nglobalSpeed is a string in the format <number>%, where <number> is in the closed interval of [20, 200]. Use this to speed-up, or slow-down the speaking rate of the speech.\n\npronunciations is an array of key-value pair objects, where key is the source string (e.g. \"Play.ht\"), and value is the target pronunciation (e.g. \"Play dot H T\"). Use this when you want to customize the pronunciation of a certain word/phrase (e.g. your brand name).\n\ntrimSilence is a boolean value. When enabled, the audio will be trimmed to remove any silence from the end of the file.\n\ntranscriptionId - Pass this to update an existing audio file",
+        "properties": [],
+        "type": "object"
+      },
+      "required": false
+    }
+  ],
+  "description": "https://docs.play.ht/reference/api-generate-audio",
+  "returnType": {
+    "rawType": "unknown",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 3,
+  "size": {
+    "characters": 3240,
+    "lines": 90,
+    "bytes": 3248,
+    "bytesPerCharacter": 1.002469135802469,
+    "charactersPerLine": 36,
+    "linesPerFile": 90,
+    "numberOfFiles": 1
+  },
+  "id": "guhrxlquhbprwjzejveatyqa"
+}

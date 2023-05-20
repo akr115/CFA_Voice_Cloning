@@ -1,0 +1,33 @@
+{
+  "createdAt": 1682926613798,
+  "updatedAt": 1682926613798,
+  "deletedAt": 0,
+  "createdFirstAt": 1682926613798,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "playhtTts",
+  "slug": "playht-tts",
+  "operationRelativeTypescriptFilePath": "src/playhtTts.ts",
+  "type": {
+    "rawType": "(persona: import(\"/Users/clarity/os/operations/tools/p2p/peer-types/build/person/Persona\").Persona, voice: string, text: string | string[], speed?: number | undefined, quality?: \"low\" | \"medium\" | \"high\" | \"premium\" | undefined) => Promise<string | undefined>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  persona: Persona,\n  voice: string,\n  text: string[] | string,\n  speed?: number,\n  quality?: \"low\" | \"medium\" | \"high\" | \"premium\"\n): Promise<string | undefined> => {\n  const result = await playhtRequest(persona, \"POST:tts\", {\n    output_format: \"wav\",\n    sample_rate: 24000,\n    text,\n    voice,\n    quality,\n    speed,\n  });\n\n  return result?.url;\n}",
+  "description": "returns a string with a url of a downloadable ogg",
+  "id": "oooujmlotkaadphxwwzngeke"
+}

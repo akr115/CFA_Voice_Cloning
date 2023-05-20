@@ -1,0 +1,406 @@
+{
+  "createdAt": 1682926617697,
+  "updatedAt": 1682926617697,
+  "deletedAt": 0,
+  "createdFirstAt": 1682926617697,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "newVoices",
+  "slug": "new-voices",
+  "operationRelativeTypescriptFilePath": "src/voices.ts",
+  "type": {
+    "rawType": "import(\"/Users/clarity/os/operations/tools/control-web/playht-wrapper/src/PlayhtVoice\").PlayhtVoice[]",
+    "typeDefinition": {
+      "optional": false,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "allOf": [
+              {
+                "transform": [
+                  "trim"
+                ]
+              },
+              {
+                "minLength": 1
+              }
+            ]
+          },
+          "sample": {
+            "type": "string",
+            "allOf": [
+              {
+                "transform": [
+                  "trim"
+                ]
+              },
+              {
+                "minLength": 1
+              }
+            ]
+          },
+          "value": {
+            "type": "string",
+            "allOf": [
+              {
+                "transform": [
+                  "trim"
+                ]
+              },
+              {
+                "minLength": 1
+              }
+            ]
+          },
+          "voiceId": {
+            "type": "string",
+            "allOf": [
+              {
+                "transform": [
+                  "trim"
+                ]
+              },
+              {
+                "minLength": 1
+              }
+            ]
+          },
+          "age": {
+            "enum": [
+              "old",
+              "adult",
+              "youth"
+            ],
+            "x-enumNames": [
+              "old",
+              "adult",
+              "youth"
+            ],
+            "type": "string"
+          },
+          "accent": {
+            "enum": [
+              "canadian",
+              "american",
+              "british"
+            ],
+            "x-enumNames": [
+              "canadian",
+              "american",
+              "british"
+            ],
+            "type": "string"
+          },
+          "gender": {
+            "enum": [
+              "male",
+              "female"
+            ],
+            "x-enumNames": [
+              "male",
+              "female"
+            ],
+            "type": "string"
+          },
+          "loudness": {
+            "enum": [
+              "low",
+              "high",
+              "neutral",
+              "whisper"
+            ],
+            "x-enumNames": [
+              "low",
+              "high",
+              "neutral",
+              "whisper"
+            ],
+            "type": "string"
+          },
+          "style": {
+            "enum": [
+              "narrative",
+              "videos",
+              "training",
+              "advertising"
+            ],
+            "x-enumNames": [
+              "narrative",
+              "videos",
+              "training",
+              "advertising"
+            ],
+            "type": "string"
+          },
+          "tempo": {
+            "enum": [
+              "neutral",
+              "slow",
+              "fast"
+            ],
+            "x-enumNames": [
+              "neutral",
+              "slow",
+              "fast"
+            ],
+            "type": "string"
+          },
+          "texture": {
+            "enum": [
+              "round",
+              "thick",
+              "gravelly",
+              "smooth"
+            ],
+            "x-enumNames": [
+              "round",
+              "thick",
+              "gravelly",
+              "smooth"
+            ],
+            "type": "string"
+          },
+          "hq": {
+            "type": "boolean"
+          },
+          "isExperimental": {
+            "type": "boolean"
+          },
+          "isNew": {
+            "type": "boolean"
+          },
+          "isPopular": {
+            "type": "boolean"
+          },
+          "language": {
+            "type": "string",
+            "allOf": [
+              {
+                "transform": [
+                  "trim"
+                ]
+              },
+              {
+                "minLength": 1
+              }
+            ]
+          },
+          "languageCode": {
+            "type": "string",
+            "allOf": [
+              {
+                "transform": [
+                  "trim"
+                ]
+              },
+              {
+                "minLength": 1
+              }
+            ]
+          }
+        },
+        "required": [
+          "name",
+          "sample",
+          "value",
+          "voiceId",
+          "age",
+          "accent",
+          "gender",
+          "loudness",
+          "style",
+          "tempo",
+          "texture",
+          "hq",
+          "isExperimental",
+          "isNew",
+          "isPopular",
+          "language",
+          "languageCode"
+        ]
+      }
+    },
+    "typeCoverage": 0,
+    "isArray": true,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "items": [
+        {
+          "schema": {
+            "properties": [
+              {
+                "name": "name",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "sample",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "value",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "voiceId",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "age",
+                "required": true,
+                "schema": {
+                  "enum": [
+                    "old",
+                    "adult",
+                    "youth"
+                  ],
+                  "type": "string"
+                }
+              },
+              {
+                "name": "accent",
+                "required": true,
+                "schema": {
+                  "enum": [
+                    "canadian",
+                    "american",
+                    "british"
+                  ],
+                  "type": "string"
+                }
+              },
+              {
+                "name": "gender",
+                "required": true,
+                "schema": {
+                  "enum": [
+                    "male",
+                    "female"
+                  ],
+                  "type": "string"
+                }
+              },
+              {
+                "name": "loudness",
+                "required": true,
+                "schema": {
+                  "enum": [
+                    "low",
+                    "high",
+                    "neutral",
+                    "whisper"
+                  ],
+                  "type": "string"
+                }
+              },
+              {
+                "name": "style",
+                "required": true,
+                "schema": {
+                  "enum": [
+                    "narrative",
+                    "videos",
+                    "training",
+                    "advertising"
+                  ],
+                  "type": "string"
+                }
+              },
+              {
+                "name": "tempo",
+                "required": true,
+                "schema": {
+                  "enum": [
+                    "neutral",
+                    "slow",
+                    "fast"
+                  ],
+                  "type": "string"
+                }
+              },
+              {
+                "name": "texture",
+                "required": true,
+                "schema": {
+                  "enum": [
+                    "round",
+                    "thick",
+                    "gravelly",
+                    "smooth"
+                  ],
+                  "type": "string"
+                }
+              },
+              {
+                "name": "hq",
+                "required": true,
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "isExperimental",
+                "required": true,
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "isNew",
+                "required": true,
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "isPopular",
+                "required": true,
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "language",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "languageCode",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "type": "object"
+          },
+          "name": null
+        }
+      ],
+      "type": "array"
+    }
+  },
+  "value": "[\n  {\n    accent: \"british\",\n    age: \"old\",\n    gender: \"male\",\n    hq: false,\n    isExperimental: false,\n    isNew: true,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"low\",\n    name: \"Abram\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/abram.wav\",\n    style: \"narrative\",\n    tempo: \"slow\",\n    texture: \"round\",\n    value: \"abram\",\n    voiceId: \"abram\",\n  },\n  {\n    accent: \"american\",\n    age: \"adult\",\n    gender: \"male\",\n    hq: false,\n    isExperimental: false,\n    isNew: true,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"neutral\",\n    name: \"Adolfo\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/adolfo.wav\",\n    style: \"narrative\",\n    tempo: \"fast\",\n    texture: \"thick\",\n    value: \"adolfo\",\n    voiceId: \"adolfo\",\n  },\n  {\n    accent: \"american\",\n    age: \"old\",\n    gender: \"male\",\n    hq: true,\n    isExperimental: true,\n    isNew: false,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"neutral\",\n    name: \"Adrian\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/Adrian.wav\",\n    style: \"narrative\",\n    tempo: \"fast\",\n    texture: \"thick\",\n    value: \"Adrian\",\n    voiceId: \"adrian\",\n  },\n  {\n    accent: \"british\",\n    age: \"old\",\n    gender: \"male\",\n    hq: false,\n    isExperimental: false,\n    isNew: true,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"neutral\",\n    name: \"Logan\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/ahmed.wav\",\n    style: \"narrative\",\n    tempo: \"neutral\",\n    texture: \"thick\",\n    value: \"ahmed\",\n    voiceId: \"ahmed\",\n  },\n  {\n    accent: \"british\",\n    age: \"adult\",\n    gender: \"male\",\n    hq: false,\n    isExperimental: false,\n    isNew: true,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"high\",\n    name: \"Alex\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/alex.wav\",\n    style: \"narrative\",\n    tempo: \"slow\",\n    texture: \"thick\",\n    value: \"alex\",\n    voiceId: \"alex\",\n  },\n  {\n    accent: \"british\",\n    age: \"old\",\n    gender: \"male\",\n    hq: true,\n    isExperimental: false,\n    isNew: false,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"high\",\n    name: \"Alexander\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/Alexander.wav\",\n    style: \"narrative\",\n    tempo: \"fast\",\n    texture: \"thick\",\n    value: \"Alexander\",\n    voiceId: \"alexander\",\n  },\n  {\n    accent: \"american\",\n    age: \"adult\",\n    gender: \"male\",\n    hq: false,\n    isExperimental: false,\n    isNew: true,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"neutral\",\n    name: \"Alfonso\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/alfonso.wav\",\n    style: \"videos\",\n    tempo: \"neutral\",\n    texture: \"gravelly\",\n    value: \"alfonso\",\n    voiceId: \"alfonso\",\n  },\n  {\n    accent: \"american\",\n    age: \"adult\",\n    gender: \"female\",\n    hq: false,\n    isExperimental: false,\n    isNew: true,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"low\",\n    name: \"Alphonso\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/alphonso.wav\",\n    style: \"videos\",\n    tempo: \"neutral\",\n    texture: \"smooth\",\n    value: \"alphonso\",\n    voiceId: \"alphonso\",\n  },\n  {\n    accent: \"american\",\n    age: \"old\",\n    gender: \"male\",\n    hq: false,\n    isExperimental: false,\n    isNew: true,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"low\",\n    name: \"Amado\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/amado.wav\",\n    style: \"narrative\",\n    tempo: \"fast\",\n    texture: \"smooth\",\n    value: \"amado\",\n    voiceId: \"amado\",\n  },\n  {\n    accent: \"american\",\n    age: \"youth\",\n    gender: \"female\",\n    hq: false,\n    isExperimental: false,\n    isNew: true,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"neutral\",\n    name: \"Anny\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/anny.wav\",\n    style: \"narrative\",\n    tempo: \"neutral\",\n    texture: \"thick\",\n    value: \"anny\",\n    voiceId: \"anny\",\n  },\n  {\n    accent: \"american\",\n    age: \"adult\",\n    gender: \"male\",\n    hq: true,\n    isExperimental: false,\n    isNew: false,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"neutral\",\n    name: \"Anthony\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/Anthony.wav\",\n    style: \"training\",\n    tempo: \"slow\",\n    texture: \"thick\",\n    value: \"Anthony\",\n    voiceId: \"anthony\",\n  },\n  {\n    accent: \"british\",\n    age: \"adult\",\n    gender: \"male\",\n    hq: true,\n    isExperimental: false,\n    isNew: false,\n    isPopular: true,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"neutral\",\n    name: \"Arthur\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/arthur.wav\",\n    style: \"narrative\",\n    tempo: \"neutral\",\n    texture: \"smooth\",\n    value: \"arthur\",\n    voiceId: \"arthur\",\n  },\n  {\n    accent: \"british\",\n    age: \"adult\",\n    gender: \"male\",\n    hq: false,\n    isExperimental: false,\n    isNew: true,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"neutral\",\n    name: \"Aubrey\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/aubrey.wav\",\n    style: \"videos\",\n    tempo: \"neutral\",\n    texture: \"smooth\",\n    value: \"aubrey\",\n    voiceId: \"aubrey\",\n  },\n  {\n    accent: \"british\",\n    age: \"adult\",\n    gender: \"female\",\n    hq: true,\n    isExperimental: false,\n    isNew: false,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"low\",\n    name: \"Aurora\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/Aurora.wav\",\n    style: \"training\",\n    tempo: \"slow\",\n    texture: \"round\",\n    value: \"Aurora\",\n    voiceId: \"aurora\",\n  },\n  {\n    accent: \"american\",\n    age: \"adult\",\n    gender: \"male\",\n    hq: true,\n    isExperimental: false,\n    isNew: false,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"neutral\",\n    name: \"Axel\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/Axel.wav\",\n    style: \"narrative\",\n    tempo: \"fast\",\n    texture: \"thick\",\n    value: \"Axel\",\n    voiceId: \"axel\",\n  },\n  {\n    accent: \"american\",\n    age: \"old\",\n    gender: \"male\",\n    hq: false,\n    isExperimental: false,\n    isNew: true,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"high\",\n    name: \"Benton\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/benton.wav\",\n    style: \"videos\",\n    tempo: \"fast\",\n    texture: \"smooth\",\n    value: \"benton\",\n    voiceId: \"benton\",\n  },\n  {\n    accent: \"british\",\n    age: \"adult\",\n    gender: \"male\",\n    hq: false,\n    isExperimental: false,\n    isNew: true,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"low\",\n    name: \"Bertram\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/bertram.wav\",\n    style: \"narrative\",\n    tempo: \"neutral\",\n    texture: \"gravelly\",\n    value: \"bertram\",\n    voiceId: \"bertram\",\n  },\n  {\n    accent: \"american\",\n    age: \"adult\",\n    gender: \"female\",\n    hq: true,\n    isExperimental: false,\n    isNew: true,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"high\",\n    name: \"Harper\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/bill.wav\",\n    style: \"videos\",\n    tempo: \"fast\",\n    texture: \"smooth\",\n    value: \"bill\",\n    voiceId: \"bill\",\n  },\n  {\n    accent: \"british\",\n    age: \"adult\",\n    gender: \"male\",\n    hq: false,\n    isExperimental: false,\n    isNew: true,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"high\",\n    name: \"Blaine\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/blaine.wav\",\n    style: \"narrative\",\n    tempo: \"neutral\",\n    texture: \"thick\",\n    value: \"blaine\",\n    voiceId: \"blaine\",\n  },\n  {\n    accent: \"british\",\n    age: \"youth\",\n    gender: \"male\",\n    hq: false,\n    isExperimental: false,\n    isNew: true,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"neutral\",\n    name: \"Booker\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/booker.wav\",\n    style: \"narrative\",\n    tempo: \"neutral\",\n    texture: \"round\",\n    value: \"booker\",\n    voiceId: \"booker\",\n  },\n  {\n    accent: \"american\",\n    age: \"adult\",\n    gender: \"female\",\n    hq: false,\n    isExperimental: false,\n    isNew: true,\n    isPopular: true,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"neutral\",\n    name: \"Bret\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/bret.wav\",\n    style: \"narrative\",\n    tempo: \"slow\",\n    texture: \"smooth\",\n    value: \"bret\",\n    voiceId: \"bret\",\n  },\n  {\n    accent: \"british\",\n    age: \"adult\",\n    gender: \"male\",\n    hq: false,\n    isExperimental: false,\n    isNew: true,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"high\",\n    name: \"Bruce\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/bruce.wav\",\n    style: \"training\",\n    tempo: \"fast\",\n    texture: \"thick\",\n    value: \"bruce\",\n    voiceId: \"bruce\",\n  },\n  {\n    accent: \"american\",\n    age: \"adult\",\n    gender: \"male\",\n    hq: false,\n    isExperimental: false,\n    isNew: true,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"low\",\n    name: \"Bryan\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/bryan.wav\",\n    style: \"videos\",\n    tempo: \"fast\",\n    texture: \"gravelly\",\n    value: \"bryan\",\n    voiceId: \"bryan\",\n  },\n  {\n    accent: \"british\",\n    age: \"adult\",\n    gender: \"male\",\n    hq: false,\n    isExperimental: false,\n    isNew: true,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"neutral\",\n    name: \"Carlo\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/carlo.wav\",\n    style: \"advertising\",\n    tempo: \"neutral\",\n    texture: \"smooth\",\n    value: \"carlo\",\n    voiceId: \"carlo\",\n  },\n  {\n    accent: \"american\",\n    age: \"adult\",\n    gender: \"male\",\n    hq: true,\n    isExperimental: false,\n    isNew: false,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"neutral\",\n    name: \"Carter\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/Carter.wav\",\n    style: \"narrative\",\n    tempo: \"neutral\",\n    texture: \"thick\",\n    value: \"Carter\",\n    voiceId: \"carter\",\n  },\n  {\n    accent: \"american\",\n    age: \"adult\",\n    gender: \"male\",\n    hq: false,\n    isExperimental: false,\n    isNew: true,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"neutral\",\n    name: \"Charles\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/charles.wav\",\n    style: \"narrative\",\n    tempo: \"neutral\",\n    texture: \"round\",\n    value: \"charles\",\n    voiceId: \"charles\",\n  },\n  {\n    accent: \"canadian\",\n    age: \"adult\",\n    gender: \"female\",\n    hq: true,\n    isExperimental: false,\n    isNew: false,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"low\",\n    name: \"Charlotte\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/charlotte.wav\",\n    style: \"narrative\",\n    tempo: \"neutral\",\n    texture: \"smooth\",\n    value: \"charlotte\",\n    voiceId: \"charlotte\",\n  },\n  {\n    accent: \"british\",\n    age: \"adult\",\n    gender: \"male\",\n    hq: false,\n    isExperimental: false,\n    isNew: true,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"neutral\",\n    name: \"Chuck\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/chuck.wav\",\n    style: \"videos\",\n    tempo: \"slow\",\n    texture: \"round\",\n    value: \"chuck\",\n    voiceId: \"chuck\",\n  },\n  {\n    accent: \"british\",\n    age: \"old\",\n    gender: \"male\",\n    hq: false,\n    isExperimental: false,\n    isNew: true,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"neutral\",\n    name: \"Clark\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/clark.wav\",\n    style: \"narrative\",\n    tempo: \"slow\",\n    texture: \"smooth\",\n    value: \"clark\",\n    voiceId: \"clark\",\n  },\n  {\n    accent: \"american\",\n    age: \"old\",\n    gender: \"male\",\n    hq: false,\n    isExperimental: true,\n    isNew: false,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"high\",\n    name: \"Clifton\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/clifton.wav\",\n    style: \"narrative\",\n    tempo: \"neutral\",\n    texture: \"gravelly\",\n    value: \"clifton\",\n    voiceId: \"clifton\",\n  },\n  {\n    accent: \"british\",\n    age: \"adult\",\n    gender: \"female\",\n    hq: true,\n    isExperimental: false,\n    isNew: false,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"low\",\n    name: \"Daisy\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/Daisy.wav\",\n    style: \"narrative\",\n    tempo: \"neutral\",\n    texture: \"gravelly\",\n    value: \"Daisy\",\n    voiceId: \"daisy\",\n  },\n  {\n    accent: \"american\",\n    age: \"adult\",\n    gender: \"male\",\n    hq: false,\n    isExperimental: false,\n    isNew: true,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"neutral\",\n    name: \"Dane\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/dane.wav\",\n    style: \"videos\",\n    tempo: \"neutral\",\n    texture: \"round\",\n    value: \"dane\",\n    voiceId: \"dane\",\n  },\n  {\n    accent: \"canadian\",\n    age: \"adult\",\n    gender: \"male\",\n    hq: true,\n    isExperimental: false,\n    isNew: false,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"low\",\n    name: \"Daniel\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/daniel_vo.wav\",\n    style: \"narrative\",\n    tempo: \"neutral\",\n    texture: \"smooth\",\n    value: \"daniel\",\n    voiceId: \"daniel\",\n  },\n  {\n    accent: \"american\",\n    age: \"youth\",\n    gender: \"male\",\n    hq: false,\n    isExperimental: false,\n    isNew: true,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"neutral\",\n    name: \"Darnell\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/darnell.wav\",\n    style: \"narrative\",\n    tempo: \"neutral\",\n    texture: \"smooth\",\n    value: \"darnell\",\n    voiceId: \"darnell\",\n  },\n  {\n    accent: \"american\",\n    age: \"old\",\n    gender: \"male\",\n    hq: false,\n    isExperimental: false,\n    isNew: true,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"low\",\n    name: \"Daron\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/daron.wav\",\n    style: \"narrative\",\n    tempo: \"slow\",\n    texture: \"round\",\n    value: \"daron\",\n    voiceId: \"daron\",\n  },\n  {\n    accent: \"british\",\n    age: \"adult\",\n    gender: \"male\",\n    hq: false,\n    isExperimental: false,\n    isNew: true,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"neutral\",\n    name: \"Darrell\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/darrell.wav\",\n    style: \"advertising\",\n    tempo: \"neutral\",\n    texture: \"thick\",\n    value: \"darrell\",\n    voiceId: \"darrell\",\n  },\n  {\n    accent: \"british\",\n    age: \"adult\",\n    gender: \"female\",\n    hq: true,\n    isExperimental: false,\n    isNew: true,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"neutral\",\n    name: \"Eleanor\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/denis.wav\",\n    style: \"advertising\",\n    tempo: \"neutral\",\n    texture: \"smooth\",\n    value: \"denis\",\n    voiceId: \"denis\",\n  },\n  {\n    accent: \"american\",\n    age: \"adult\",\n    gender: \"male\",\n    hq: false,\n    isExperimental: false,\n    isNew: true,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"neutral\",\n    name: \"Dick\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/dick.wav\",\n    style: \"training\",\n    tempo: \"fast\",\n    texture: \"smooth\",\n    value: \"dick\",\n    voiceId: \"dick\",\n  },\n  {\n    accent: \"british\",\n    age: \"adult\",\n    gender: \"male\",\n    hq: false,\n    isExperimental: false,\n    isNew: true,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"high\",\n    name: \"Domenic\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/domenic.wav\",\n    style: \"videos\",\n    tempo: \"neutral\",\n    texture: \"thick\",\n    value: \"domenic\",\n    voiceId: \"domenic\",\n  },\n  {\n    accent: \"american\",\n    age: \"adult\",\n    gender: \"male\",\n    hq: true,\n    isExperimental: false,\n    isNew: true,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"low\",\n    name: \"Donovan\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/donovan.wav\",\n    style: \"narrative\",\n    tempo: \"neutral\",\n    texture: \"smooth\",\n    value: \"donovan\",\n    voiceId: \"donovan\",\n  },\n  {\n    accent: \"american\",\n    age: \"old\",\n    gender: \"male\",\n    hq: false,\n    isExperimental: false,\n    isNew: true,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"low\",\n    name: \"Dudley\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/dudley.wav\",\n    style: \"narrative\",\n    tempo: \"fast\",\n    texture: \"smooth\",\n    value: \"dudley\",\n    voiceId: \"dudley\",\n  },\n  {\n    accent: \"british\",\n    age: \"old\",\n    gender: \"male\",\n    hq: true,\n    isExperimental: false,\n    isNew: true,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"high\",\n    name: \"Dylan\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/dylan.wav\",\n    style: \"videos\",\n    tempo: \"slow\",\n    texture: \"smooth\",\n    value: \"dylan\",\n    voiceId: \"dylan\",\n  },\n  {\n    accent: \"british\",\n    age: \"adult\",\n    gender: \"male\",\n    hq: false,\n    isExperimental: false,\n    isNew: true,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"high\",\n    name: \"Earle\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/earle.wav\",\n    style: \"narrative\",\n    tempo: \"neutral\",\n    texture: \"gravelly\",\n    value: \"earle\",\n    voiceId: \"earle\",\n  },\n  {\n    accent: \"american\",\n    age: \"adult\",\n    gender: \"male\",\n    hq: true,\n    isExperimental: false,\n    isNew: true,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"neutral\",\n    name: \"Efren\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/efren.wav\",\n    style: \"training\",\n    tempo: \"slow\",\n    texture: \"thick\",\n    value: \"efren\",\n    voiceId: \"efren\",\n  },\n  {\n    accent: \"american\",\n    age: \"old\",\n    gender: \"male\",\n    hq: true,\n    isExperimental: false,\n    isNew: true,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"neutral\",\n    name: \"Elijah\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/elijah.wav\",\n    style: \"training\",\n    tempo: \"neutral\",\n    texture: \"gravelly\",\n    value: \"elijah\",\n    voiceId: \"elijah\",\n  },\n  {\n    accent: \"american\",\n    age: \"adult\",\n    gender: \"female\",\n    hq: true,\n    isExperimental: false,\n    isNew: false,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"low\",\n    name: \"Ellie\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/Ellie.wav\",\n    style: \"training\",\n    tempo: \"slow\",\n    texture: \"smooth\",\n    value: \"Ellie\",\n    voiceId: \"ellie\",\n  },\n  {\n    accent: \"american\",\n    age: \"old\",\n    gender: \"male\",\n    hq: false,\n    isExperimental: false,\n    isNew: true,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"low\",\n    name: \"Erasmo\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/erasmo.wav\",\n    style: \"training\",\n    tempo: \"fast\",\n    texture: \"smooth\",\n    value: \"erasmo\",\n    voiceId: \"erasmo\",\n  },\n  {\n    accent: \"american\",\n    age: \"adult\",\n    gender: \"female\",\n    hq: true,\n    isExperimental: false,\n    isNew: false,\n    isPopular: true,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"low\",\n    name: \"Evelyn\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/Evelyn.wav\",\n    style: \"videos\",\n    tempo: \"neutral\",\n    texture: \"smooth\",\n    value: \"Evelyn\",\n    voiceId: \"evelyn\",\n  },\n  {\n    accent: \"british\",\n    age: \"adult\",\n    gender: \"male\",\n    hq: true,\n    isExperimental: false,\n    isNew: true,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"neutral\",\n    name: \"Fletcher\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/fletcher.wav\",\n    style: \"narrative\",\n    tempo: \"fast\",\n    texture: \"gravelly\",\n    value: \"fletcher\",\n    voiceId: \"fletcher\",\n  },\n  {\n    accent: \"british\",\n    age: \"old\",\n    gender: \"female\",\n    hq: true,\n    isExperimental: false,\n    isNew: true,\n    isPopular: true,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"neutral\",\n    name: \"Madison\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/florencio.wav\",\n    style: \"narrative\",\n    tempo: \"slow\",\n    texture: \"round\",\n    value: \"florencio\",\n    voiceId: \"florencio\",\n  },\n  {\n    accent: \"british\",\n    age: \"adult\",\n    gender: \"male\",\n    hq: true,\n    isExperimental: false,\n    isNew: true,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"neutral\",\n    name: \"Flynn\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/flynn.wav\",\n    style: \"narrative\",\n    tempo: \"fast\",\n    texture: \"round\",\n    value: \"flynn\",\n    voiceId: \"flynn\",\n  },\n  {\n    accent: \"american\",\n    age: \"old\",\n    gender: \"male\",\n    hq: true,\n    isExperimental: false,\n    isNew: false,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"neutral\",\n    name: \"Frankie\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/Frankie.wav\",\n    style: \"training\",\n    tempo: \"neutral\",\n    texture: \"thick\",\n    value: \"Frankie\",\n    voiceId: \"frankie\",\n  },\n  {\n    accent: \"british\",\n    age: \"adult\",\n    gender: \"male\",\n    hq: true,\n    isExperimental: false,\n    isNew: false,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"low\",\n    name: \"Frederick\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/Frederick.wav\",\n    style: \"narrative\",\n    tempo: \"slow\",\n    texture: \"thick\",\n    value: \"Frederick\",\n    voiceId: \"frederick\",\n  },\n  {\n    accent: \"american\",\n    age: \"old\",\n    gender: \"female\",\n    hq: true,\n    isExperimental: false,\n    isNew: true,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"neutral\",\n    name: \"Samantha\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/gabriel.wav\",\n    style: \"narrative\",\n    tempo: \"neutral\",\n    texture: \"thick\",\n    value: \"gabriel\",\n    voiceId: \"gabriel\",\n  },\n  {\n    accent: \"british\",\n    age: \"adult\",\n    gender: \"male\",\n    hq: true,\n    isExperimental: false,\n    isNew: true,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"high\",\n    name: \"Greg\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/greg.wav\",\n    style: \"narrative\",\n    tempo: \"slow\",\n    texture: \"round\",\n    value: \"greg\",\n    voiceId: \"greg\",\n  },\n  {\n    accent: \"american\",\n    age: \"adult\",\n    gender: \"male\",\n    hq: true,\n    isExperimental: false,\n    isNew: true,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"neutral\",\n    name: \"Harold\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/harold.wav\",\n    style: \"narrative\",\n    tempo: \"slow\",\n    texture: \"smooth\",\n    value: \"harold\",\n    voiceId: \"harold\",\n  },\n  {\n    accent: \"british\",\n    age: \"adult\",\n    gender: \"male\",\n    hq: true,\n    isExperimental: false,\n    isNew: true,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"low\",\n    name: \"Harris\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/harris.wav\",\n    style: \"narrative\",\n    tempo: \"fast\",\n    texture: \"smooth\",\n    value: \"harris\",\n    voiceId: \"harris\",\n  },\n  {\n    accent: \"american\",\n    age: \"adult\",\n    gender: \"male\",\n    hq: true,\n    isExperimental: false,\n    isNew: false,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"neutral\",\n    name: \"Harrison\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/Harrison.wav\",\n    style: \"narrative\",\n    tempo: \"fast\",\n    texture: \"round\",\n    value: \"Harrison\",\n    voiceId: \"harrison\",\n  },\n  {\n    accent: \"american\",\n    age: \"adult\",\n    gender: \"male\",\n    hq: true,\n    isExperimental: false,\n    isNew: true,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"neutral\",\n    name: \"Cooper\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/hayden.wav\",\n    style: \"narrative\",\n    tempo: \"neutral\",\n    texture: \"round\",\n    value: \"hayden\",\n    voiceId: \"hayden\",\n  },\n  {\n    accent: \"american\",\n    age: \"adult\",\n    gender: \"female\",\n    hq: true,\n    isExperimental: false,\n    isNew: true,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"low\",\n    name: \"Audrey\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/hipolito.wav\",\n    style: \"narrative\",\n    tempo: \"slow\",\n    texture: \"round\",\n    value: \"hipolito\",\n    voiceId: \"hipolito\",\n  },\n  {\n    accent: \"american\",\n    age: \"adult\",\n    gender: \"male\",\n    hq: true,\n    isExperimental: false,\n    isNew: false,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"neutral\",\n    name: \"Hudson\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/Hudson.wav\",\n    style: \"videos\",\n    tempo: \"neutral\",\n    texture: \"thick\",\n    value: \"Hudson\",\n    voiceId: \"hudson\",\n  },\n  {\n    accent: \"british\",\n    age: \"old\",\n    gender: \"male\",\n    hq: true,\n    isExperimental: false,\n    isNew: false,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"high\",\n    name: \"Hunter\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/Hunter.wav\",\n    style: \"narrative\",\n    tempo: \"fast\",\n    texture: \"round\",\n    value: \"Hunter\",\n    voiceId: \"hunter\",\n  },\n  {\n    accent: \"american\",\n    age: \"adult\",\n    gender: \"female\",\n    hq: true,\n    isExperimental: false,\n    isNew: true,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"neutral\",\n    name: \"Delilah\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/ignacio.wav\",\n    style: \"narrative\",\n    tempo: \"slow\",\n    texture: \"smooth\",\n    value: \"ignacio\",\n    voiceId: \"ignacio\",\n  },\n  {\n    accent: \"american\",\n    age: \"adult\",\n    gender: \"male\",\n    hq: true,\n    isExperimental: false,\n    isNew: true,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"low\",\n    name: \"Jarrett\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/jarrett.wav\",\n    style: \"advertising\",\n    tempo: \"slow\",\n    texture: \"smooth\",\n    value: \"jarrett\",\n    voiceId: \"jarrett\",\n  },\n  {\n    accent: \"american\",\n    age: \"adult\",\n    gender: \"male\",\n    hq: false,\n    isExperimental: false,\n    isNew: true,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"low\",\n    name: \"Jerrell\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/jerrell.wav\",\n    style: \"narrative\",\n    tempo: \"neutral\",\n    texture: \"round\",\n    value: \"jerrell\",\n    voiceId: \"jerrell\",\n  },\n  {\n    accent: \"american\",\n    age: \"adult\",\n    gender: \"male\",\n    hq: true,\n    isExperimental: false,\n    isNew: false,\n    isPopular: true,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"neutral\",\n    name: \"Jordan\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/jordan.wav\",\n    style: \"training\",\n    tempo: \"slow\",\n    texture: \"round\",\n    value: \"jordan\",\n    voiceId: \"jordan\",\n  },\n  {\n    accent: \"american\",\n    age: \"adult\",\n    gender: \"male\",\n    hq: true,\n    isExperimental: false,\n    isNew: true,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"low\",\n    name: \"Judson\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/judson.wav\",\n    style: \"narrative\",\n    tempo: \"slow\",\n    texture: \"smooth\",\n    value: \"judson\",\n    voiceId: \"judson\",\n  },\n  {\n    accent: \"american\",\n    age: \"adult\",\n    gender: \"male\",\n    hq: true,\n    isExperimental: false,\n    isNew: false,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"neutral\",\n    name: \"Julian\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/Julian.wav\",\n    style: \"videos\",\n    tempo: \"neutral\",\n    texture: \"round\",\n    value: \"Julian\",\n    voiceId: \"julian\",\n  },\n  {\n    accent: \"british\",\n    age: \"adult\",\n    gender: \"male\",\n    hq: true,\n    isExperimental: false,\n    isNew: true,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"low\",\n    name: \"Lance\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/lance.wav\",\n    style: \"videos\",\n    tempo: \"neutral\",\n    texture: \"smooth\",\n    value: \"lance\",\n    voiceId: \"lance\",\n  },\n  {\n    accent: \"american\",\n    age: \"adult\",\n    gender: \"male\",\n    hq: true,\n    isExperimental: false,\n    isNew: false,\n    isPopular: true,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"neutral\",\n    name: \"Larry\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/larry.wav\",\n    style: \"narrative\",\n    tempo: \"neutral\",\n    texture: \"smooth\",\n    value: \"larry\",\n    voiceId: \"larry\",\n  },\n  {\n    accent: \"british\",\n    age: \"old\",\n    gender: \"female\",\n    hq: true,\n    isExperimental: false,\n    isNew: false,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"neutral\",\n    name: \"Lillian\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/Lillian.wav\",\n    style: \"training\",\n    tempo: \"slow\",\n    texture: \"round\",\n    value: \"Lillian\",\n    voiceId: \"lillian\",\n  },\n  {\n    accent: \"british\",\n    age: \"adult\",\n    gender: \"female\",\n    hq: true,\n    isExperimental: false,\n    isNew: false,\n    isPopular: true,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"low\",\n    name: \"Lottie\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/Lottie.wav\",\n    style: \"narrative\",\n    tempo: \"slow\",\n    texture: \"smooth\",\n    value: \"Lottie\",\n    voiceId: \"lottie\",\n  },\n  {\n    accent: \"british\",\n    age: \"adult\",\n    gender: \"male\",\n    hq: false,\n    isExperimental: false,\n    isNew: true,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"low\",\n    name: \"Lucius\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/lucius.wav\",\n    style: \"narrative\",\n    tempo: \"slow\",\n    texture: \"smooth\",\n    value: \"lucius\",\n    voiceId: \"lucius\",\n  },\n  {\n    accent: \"british\",\n    age: \"adult\",\n    gender: \"female\",\n    hq: false,\n    isExperimental: false,\n    isNew: true,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"neutral\",\n    name: \"Micah\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/micah.wav\",\n    style: \"narrative\",\n    tempo: \"neutral\",\n    texture: \"smooth\",\n    value: \"micah\",\n    voiceId: \"micah\",\n  },\n  {\n    accent: \"british\",\n    age: \"adult\",\n    gender: \"female\",\n    hq: true,\n    isExperimental: false,\n    isNew: true,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"neutral\",\n    name: \"Madelyn\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/mickey.wav\",\n    style: \"videos\",\n    tempo: \"fast\",\n    texture: \"thick\",\n    value: \"mickey\",\n    voiceId: \"mickey\",\n  },\n  {\n    accent: \"british\",\n    age: \"adult\",\n    gender: \"male\",\n    hq: true,\n    isExperimental: false,\n    isNew: false,\n    isPopular: true,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"high\",\n    name: \"Nolan\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/Nolan.wav\",\n    style: \"videos\",\n    tempo: \"neutral\",\n    texture: \"round\",\n    value: \"Nolan\",\n    voiceId: \"nolan\",\n  },\n  {\n    accent: \"american\",\n    age: \"adult\",\n    gender: \"female\",\n    hq: true,\n    isExperimental: false,\n    isNew: false,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"whisper\",\n    name: \"Nova\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/Nova.wav\",\n    style: \"narrative\",\n    tempo: \"slow\",\n    texture: \"smooth\",\n    value: \"Nova\",\n    voiceId: \"nova\",\n  },\n  {\n    accent: \"british\",\n    age: \"adult\",\n    gender: \"male\",\n    hq: true,\n    isExperimental: false,\n    isNew: false,\n    isPopular: true,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"high\",\n    name: \"Oliver\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/oliver.wav\",\n    style: \"videos\",\n    tempo: \"neutral\",\n    texture: \"round\",\n    value: \"oliver\",\n    voiceId: \"oliver\",\n  },\n  {\n    accent: \"british\",\n    age: \"adult\",\n    gender: \"male\",\n    hq: true,\n    isExperimental: false,\n    isNew: true,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"neutral\",\n    name: \"Oscar\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/oscar.wav\",\n    style: \"narrative\",\n    tempo: \"slow\",\n    texture: \"smooth\",\n    value: \"oscar\",\n    voiceId: \"oscar\",\n  },\n  {\n    accent: \"american\",\n    age: \"youth\",\n    gender: \"male\",\n    hq: true,\n    isExperimental: false,\n    isNew: false,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"high\",\n    name: \"Owen\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/Owen.wav\",\n    style: \"narrative\",\n    tempo: \"neutral\",\n    texture: \"round\",\n    value: \"Owen\",\n    voiceId: \"owen\",\n  },\n  {\n    accent: \"american\",\n    age: \"adult\",\n    gender: \"male\",\n    hq: true,\n    isExperimental: false,\n    isNew: true,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"neutral\",\n    name: \"Pedro\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/pedro.wav\",\n    style: \"narrative\",\n    tempo: \"slow\",\n    texture: \"round\",\n    value: \"pedro\",\n    voiceId: \"pedro\",\n  },\n  {\n    accent: \"british\",\n    age: \"adult\",\n    gender: \"female\",\n    hq: true,\n    isExperimental: false,\n    isNew: false,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"high\",\n    name: \"Phoebe\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/Phoebe.wav\",\n    style: \"videos\",\n    tempo: \"fast\",\n    texture: \"smooth\",\n    value: \"Phoebe\",\n    voiceId: \"phoebe\",\n  },\n  {\n    accent: \"british\",\n    age: \"adult\",\n    gender: \"male\",\n    hq: false,\n    isExperimental: false,\n    isNew: true,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"high\",\n    name: \"Randall\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/randall.wav\",\n    style: \"narrative\",\n    tempo: \"fast\",\n    texture: \"thick\",\n    value: \"randall\",\n    voiceId: \"randall\",\n  },\n  {\n    accent: \"british\",\n    age: \"old\",\n    gender: \"male\",\n    hq: false,\n    isExperimental: false,\n    isNew: true,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"low\",\n    name: \"Reynaldo\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/reynaldo.wav\",\n    style: \"narrative\",\n    tempo: \"fast\",\n    texture: \"smooth\",\n    value: \"reynaldo\",\n    voiceId: \"reynaldo\",\n  },\n  {\n    accent: \"american\",\n    age: \"adult\",\n    gender: \"male\",\n    hq: false,\n    isExperimental: false,\n    isNew: true,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"neutral\",\n    name: \"Rodrick\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/rodrick.wav\",\n    style: \"narrative\",\n    tempo: \"neutral\",\n    texture: \"smooth\",\n    value: \"rodrick\",\n    voiceId: \"rodrick\",\n  },\n  {\n    accent: \"american\",\n    age: \"old\",\n    gender: \"male\",\n    hq: false,\n    isExperimental: false,\n    isNew: true,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"high\",\n    name: \"Samuel\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/samuel.wav\",\n    style: \"narrative\",\n    tempo: \"slow\",\n    texture: \"gravelly\",\n    value: \"samuel\",\n    voiceId: \"samuel\",\n  },\n  {\n    accent: \"british\",\n    age: \"adult\",\n    gender: \"female\",\n    hq: true,\n    isExperimental: false,\n    isNew: true,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"neutral\",\n    name: \"April\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/spencer.wav\",\n    style: \"narrative\",\n    tempo: \"slow\",\n    texture: \"smooth\",\n    value: \"spencer\",\n    voiceId: \"spencer\",\n  },\n  {\n    accent: \"british\",\n    age: \"old\",\n    gender: \"female\",\n    hq: true,\n    isExperimental: false,\n    isNew: false,\n    isPopular: true,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"neutral\",\n    name: \"Stella\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/Stella.wav\",\n    style: \"training\",\n    tempo: \"slow\",\n    texture: \"round\",\n    value: \"Stella\",\n    voiceId: \"stella\",\n  },\n  {\n    accent: \"american\",\n    age: \"adult\",\n    gender: \"female\",\n    hq: true,\n    isExperimental: false,\n    isNew: false,\n    isPopular: true,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"high\",\n    name: \"Susan\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/susan.wav\",\n    style: \"videos\",\n    tempo: \"neutral\",\n    texture: \"round\",\n    value: \"susan\",\n    voiceId: \"susan\",\n  },\n  {\n    accent: \"american\",\n    age: \"old\",\n    gender: \"male\",\n    hq: true,\n    isExperimental: false,\n    isNew: false,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"neutral\",\n    name: \"Theodore\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/Theodore.wav\",\n    style: \"narrative\",\n    tempo: \"neutral\",\n    texture: \"gravelly\",\n    value: \"Theodore\",\n    voiceId: \"theodore\",\n  },\n  {\n    accent: \"american\",\n    age: \"youth\",\n    gender: \"female\",\n    hq: true,\n    isExperimental: false,\n    isNew: true,\n    isPopular: true,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"high\",\n    name: \"Ariana\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/victor.wav\",\n    style: \"videos\",\n    tempo: \"fast\",\n    texture: \"thick\",\n    value: \"victor\",\n    voiceId: \"victor\",\n  },\n  {\n    accent: \"british\",\n    age: \"adult\",\n    gender: \"male\",\n    hq: true,\n    isExperimental: false,\n    isNew: true,\n    isPopular: true,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"neutral\",\n    name: \"Wilbert\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/wilbert.wav\",\n    style: \"narrative\",\n    tempo: \"neutral\",\n    texture: \"round\",\n    value: \"wilbert\",\n    voiceId: \"wilbert\",\n  },\n  {\n    accent: \"american\",\n    age: \"youth\",\n    gender: \"male\",\n    hq: false,\n    isExperimental: false,\n    isNew: true,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"neutral\",\n    name: \"Wilbur\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/wilbur.wav\",\n    style: \"narrative\",\n    tempo: \"neutral\",\n    texture: \"smooth\",\n    value: \"wilbur\",\n    voiceId: \"wilbur\",\n  },\n  {\n    accent: \"american\",\n    age: \"old\",\n    gender: \"male\",\n    hq: true,\n    isExperimental: false,\n    isNew: true,\n    isPopular: false,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"low\",\n    name: \"Wilfred\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/wilfred.wav\",\n    style: \"training\",\n    tempo: \"slow\",\n    texture: \"smooth\",\n    value: \"wilfred\",\n    voiceId: \"wilfred\",\n  },\n  {\n    accent: \"american\",\n    age: \"adult\",\n    gender: \"male\",\n    hq: true,\n    isExperimental: false,\n    isNew: false,\n    isPopular: true,\n    language: \"English (US)\",\n    languageCode: \"EN-US\",\n    loudness: \"neutral\",\n    name: \"William\",\n    sample:\n      \"https://peregrine-samples.s3.amazonaws.com/editor-samples/william_vo.wav\",\n    style: \"videos\",\n    tempo: \"neutral\",\n    texture: \"round\",\n    value: \"william\",\n    voiceId: \"william\",\n  },\n]",
+  "description": "",
+  "id": "voaqlisdihmpgegffwskvhzq"
+}

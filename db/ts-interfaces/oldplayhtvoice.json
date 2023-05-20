@@ -1,0 +1,199 @@
+{
+  "createdAt": 1682926593756,
+  "updatedAt": 1682926593756,
+  "deletedAt": 0,
+  "createdFirstAt": 1682926593756,
+  "id": "oldplayhtvoice",
+  "name": "OldPlayhtVoice",
+  "slug": "oldplayhtvoice",
+  "operationRelativeTypescriptFilePath": "src/OldPlayhtVoice.ts",
+  "hasGeneric": false,
+  "isExported": true,
+  "rawText": "export type OldPlayhtVoice = {\n  value: string;\n  name: string;\n  language: string;\n  voiceType: \"Standard\" | \"Neural\";\n  /**\n   * e.g. en-US\n   */\n  languageCode: string;\n  gender: \"Male\" | \"Female\";\n  service: \"polly\" | \"gc\" | \"watson\" | \"ms\";\n  sample: string;\n  isKid?: boolean;\n  isNew?: boolean;\n  styles?: string[];\n};",
+  "extensions": [],
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "language": {
+          "type": "string"
+        },
+        "voiceType": {
+          "type": "string",
+          "enum": [
+            "Standard",
+            "Neural"
+          ]
+        },
+        "languageCode": {
+          "type": "string",
+          "description": "e.g. en-US"
+        },
+        "gender": {
+          "type": "string",
+          "enum": [
+            "Male",
+            "Female"
+          ]
+        },
+        "service": {
+          "type": "string",
+          "enum": [
+            "polly",
+            "gc",
+            "watson",
+            "ms"
+          ]
+        },
+        "sample": {
+          "type": "string"
+        },
+        "isKid": {
+          "type": "boolean"
+        },
+        "isNew": {
+          "type": "boolean"
+        },
+        "styles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "value",
+        "name",
+        "language",
+        "voiceType",
+        "languageCode",
+        "gender",
+        "service",
+        "sample"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "value",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "name",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "language",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "voiceType",
+          "required": true,
+          "schema": {
+            "enum": [
+              "Standard",
+              "Neural"
+            ],
+            "type": "string"
+          }
+        },
+        {
+          "name": "languageCode",
+          "required": true,
+          "schema": {
+            "fullComment": "e.g. en-US",
+            "type": "string"
+          }
+        },
+        {
+          "name": "gender",
+          "required": true,
+          "schema": {
+            "enum": [
+              "Male",
+              "Female"
+            ],
+            "type": "string"
+          }
+        },
+        {
+          "name": "service",
+          "required": true,
+          "schema": {
+            "enum": [
+              "polly",
+              "gc",
+              "watson",
+              "ms"
+            ],
+            "type": "string"
+          }
+        },
+        {
+          "name": "sample",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "isKid",
+          "required": false,
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "isNew",
+          "required": false,
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "styles",
+          "required": false,
+          "schema": {
+            "items": [
+              {
+                "schema": {
+                  "type": "string"
+                },
+                "name": null
+              }
+            ],
+            "type": "array"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "OldPlayhtVoice",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

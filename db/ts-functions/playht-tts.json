@@ -1,0 +1,728 @@
+{
+  "createdAt": 1682926613563,
+  "updatedAt": 1682926613563,
+  "deletedAt": 0,
+  "createdFirstAt": 1682926613563,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/playhtTts.ts",
+  "commentsInside": [],
+  "rawText": " async (\n  persona: Persona,\n  voice: string,\n  text: string[] | string,\n  speed?: number,\n  quality?: \"low\" | \"medium\" | \"high\" | \"premium\"\n): Promise<string | undefined> => {\n  const result = await playhtRequest(persona, \"POST:tts\", {\n    output_format: \"wav\",\n    sample_rate: 24000,\n    text,\n    voice,\n    quality,\n    speed,\n  });\n\n  return result?.url;\n}",
+  "name": "playhtTts",
+  "slug": "playht-tts",
+  "parameters": [
+    {
+      "name": "persona",
+      "schema": {
+        "$ref": "#/definitions/Persona"
+      },
+      "simplifiedSchema": {
+        "fullComment": "State for an \"assistant\" role in the chat completions API of openai, given by the \"system\" role.\n\nSome states might be able to be dynamicly altered by certain behavior of the user.\n\nNB: i tried to do some prompt chaining stuff within the JSON, but this seems to difficult at this point, especially since we also want hooks and other integrations possibly, JSON isn't the right format. Let's just write custom code for every assistant. Highly private model.\n\nConfiguration for a person identity that you say that is you.\n\nAs a OS user you can have multiple personas between which you can easily switch.\n\nThe difference from `Person` is that `Person` stores other people, whereas `Persona` stores different identities you give to yourself.\n\nEvery persona is admin by default\n\nNB: brands should also be able to be personas, and since some brands are shared between people, you should be able to share Persona's with other `Person`s into their OS...\n\n> Persona: A persona, depending on the context, is the public image of one's personality, the social role that one adopts, or simply a fictional character. The word derives from Latin, where it originally referred to a theatrical mask. On the social web, users develop virtual personas as online identities. (Wikipedia)",
+        "nb": "i tried to do some prompt chaining stuff within the JSON, but this seems to difficult at this point, especially since we also want hooks and other integrations possibly, JSON isn't the right format. Let's just write custom code for every assistant. Highly private model.",
+        "properties": [
+          {
+            "name": "projectRelativePath",
+            "required": false,
+            "schema": {
+              "fullComment": "Where the item is/was stored",
+              "type": "string"
+            }
+          },
+          {
+            "name": "absolutePath",
+            "required": false,
+            "schema": {
+              "fullComment": "Absolute item location (not always given)",
+              "type": "string"
+            }
+          },
+          {
+            "name": "modelName",
+            "required": true,
+            "schema": {
+              "fullComment": "PascalCase name of the type interface of the model",
+              "type": "string"
+            }
+          },
+          {
+            "name": "slug",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "email",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "preferredTextToText",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "default_aiPluginDomains",
+            "required": false,
+            "schema": {
+              "fullComment": "new users that interact with this assistant as a new relation will get these plugins assigned",
+              "items": [
+                {
+                  "schema": {
+                    "type": "string"
+                  },
+                  "name": null
+                }
+              ],
+              "type": "array"
+            }
+          },
+          {
+            "name": "playhtUserId",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "playhtSecret",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "speakerStyleSlug",
+            "required": false,
+            "schema": {
+              "fullComment": "If given, forces the speaker style.\n\nThe message will be put into speech when received by this persona, and added to the ChatMessage\n\nuse this for any identifier that's not an Id-type. Usually this is a kebab-case version of a written text, but it can also be a file path, for example.",
+              "type": "string"
+            }
+          },
+          {
+            "name": "responseModality",
+            "required": false,
+            "schema": {
+              "enum": [
+                "both",
+                "voice",
+                "text"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "name": "inherited_personaSlug",
+            "required": false,
+            "schema": {
+              "fullComment": "If this is given, will inherit all existing values from that persona, and overwrite them with the ones this persona has.",
+              "type": "string"
+            }
+          },
+          {
+            "name": "isEnabled",
+            "required": false,
+            "schema": {
+              "fullComment": "If true, will appear in list of bots",
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "disableVideos",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "freeMessagesPerDay",
+            "required": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "freeMessagesPerNewUser",
+            "required": false,
+            "schema": {
+              "fullComment": "free messages per new user",
+              "type": "number"
+            }
+          },
+          {
+            "name": "freeMessagesPerNewUserAfterDauLimit",
+            "required": false,
+            "schema": {
+              "fullComment": "free messages per new user after dau limit",
+              "type": "number"
+            }
+          },
+          {
+            "name": "maximumNewUsersPerDay",
+            "required": false,
+            "schema": {
+              "fullComment": "amount of new users allowed (per day)",
+              "type": "number"
+            }
+          },
+          {
+            "name": "giftsPerDay",
+            "required": false,
+            "schema": {
+              "fullComment": "amount of gifts to inactive users (per day)",
+              "type": "number"
+            }
+          },
+          {
+            "name": "giftFreeMessages",
+            "required": false,
+            "schema": {
+              "fullComment": "free messages in a gift",
+              "type": "number"
+            }
+          },
+          {
+            "name": "dauLimit",
+            "required": false,
+            "schema": {
+              "fullComment": "dau limit (defaults to 100)",
+              "type": "number"
+            }
+          },
+          {
+            "name": "dauLimitPaid",
+            "required": false,
+            "schema": {
+              "fullComment": "paid dau limit ($5+)",
+              "type": "number"
+            }
+          },
+          {
+            "name": "dauLimitVip",
+            "required": false,
+            "schema": {
+              "fullComment": "vip dau limit ($50+)",
+              "type": "number"
+            }
+          },
+          {
+            "name": "minimumCreditPaid",
+            "required": false,
+            "schema": {
+              "fullComment": "minimum credit required to be \"paid\", defaults to 0",
+              "type": "number"
+            }
+          },
+          {
+            "name": "minimumCreditVip",
+            "required": false,
+            "schema": {
+              "fullComment": "minimum credit required to be \"deluxe\", omitted if not set",
+              "type": "number"
+            }
+          },
+          {
+            "name": "freeMessagesForReferral",
+            "required": false,
+            "schema": {
+              "fullComment": "reward free messages for referal use",
+              "type": "number"
+            }
+          },
+          {
+            "name": "freeMessagesForReferralPay",
+            "required": false,
+            "schema": {
+              "fullComment": "reward for referal pay",
+              "type": "number"
+            }
+          },
+          {
+            "name": "costPerMessageCredit",
+            "required": false,
+            "schema": {
+              "fullComment": "Defaults to 0.05",
+              "type": "number"
+            }
+          },
+          {
+            "name": "fillerSentences",
+            "required": false,
+            "schema": {
+              "items": [
+                {
+                  "schema": {
+                    "type": "string"
+                  },
+                  "name": null
+                }
+              ],
+              "type": "array"
+            }
+          },
+          {
+            "name": "customWelcomeMessage",
+            "required": false,
+            "schema": {
+              "fullComment": "Custom message, instead of \"Nice to meet you $name. Let's get started. To answer your first message\"",
+              "type": "string"
+            }
+          },
+          {
+            "name": "customWelcomeBackMessage",
+            "required": false,
+            "schema": {
+              "fullComment": "Replaces the message that shows you how many credit you have",
+              "type": "string"
+            }
+          },
+          {
+            "name": "customPaywallMessage",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "defaultFollowPersonSlugs",
+            "required": false,
+            "schema": {
+              "items": [
+                {
+                  "schema": {
+                    "type": "string"
+                  },
+                  "name": null
+                }
+              ],
+              "type": "array"
+            }
+          },
+          {
+            "name": "stripeWebhookSigningSecret",
+            "required": false,
+            "schema": {
+              "fullComment": "secret for signing the webhook",
+              "type": "string"
+            }
+          },
+          {
+            "name": "stripePublishableKey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "stripeSecret",
+            "required": false,
+            "schema": {
+              "fullComment": "NB: should have a custom input in the `SimplifiedSchemaForm`",
+              "nb": "should have a custom input in the `SimplifiedSchemaForm`",
+              "type": "string"
+            }
+          },
+          {
+            "name": "twilioAccountSid",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "twilioAuthToken",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "twilioWhatsappFromPhoneNumber",
+            "required": false,
+            "schema": {
+              "fullComment": "TODO: rename to twilioPhoneNumber\n\nMust be a phone number that is also a whatsapp sender if you want to use it for this as well",
+              "todo": "rename to twilioPhoneNumber",
+              "type": "string"
+            }
+          },
+          {
+            "name": "twilioMessengerId",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sendgridApiKey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sendgridFromEmail",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "githubEmail",
+            "required": false,
+            "schema": {
+              "fullComment": "Github stuff",
+              "type": "string"
+            }
+          },
+          {
+            "name": "githubAccessToken",
+            "required": false,
+            "schema": {
+              "fullComment": "Personal access token",
+              "type": "string"
+            }
+          },
+          {
+            "name": "githubOrganisation",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "useGithubOrganisation",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "mediaCredentialIds",
+            "required": false,
+            "schema": {
+              "items": [
+                {
+                  "schema": {
+                    "fullComment": "Should be an unique string By default, you can use `generateId()` to generate a random string of 16 characters. If you wish, you can also use any other string, as long as you are sure it's unique.\n\n# Background Info\n\nazAZ09 characters are easy to copy and provide 62 characters. the goal of an id is to be unique.\n\nthe advantage of a random id compared to an numeric id starting with 1 with auto increment is that you can set them up decentralised.\n\nthe change of duplicate ids gets bigger once you make them shorter the change of finding an existing id gets bigger once you make them shorter\n\nAn Id with 12 characters would provide 3.22e21 combinations.\n\nWhat is the change of duplicate ids? This depends on the amount of identifyable items in the data What is the change of guessing an id? This depends on speed of a brute force attack and the amount of available datapoints. If you can guess 10000 times per second, you can make 864.000.000 guesses. A billion guesses on a dataset of a billion datapoints yields 3226 correct ids on average.\n\nWhy make an id short? I don't know if there's an important reason.\n\nAll in all, I think we should make ids 24 characters by default. This would make it very easy to store, yet, with more than E42 combinations, make it nearly impossible to get duplication or brute force hits.\n\nAn id would look like this:\n\n``` { \"id\": \"sk2EcW9AkZpksk2EcW9AkZpk\" } ```\n\nLooks good to me! Don't think about it and just keep it simple. We can always migrate later to a bigger amount, but I don't see good reason to keep it smaller than this.",
+                    "type": "string"
+                  },
+                  "name": "Id"
+                }
+              ],
+              "type": "array"
+            }
+          },
+          {
+            "name": "apiKey2Captcha",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "openAiPassword",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "openAiEmail",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "openAiToken",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "linkedinEmail",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "linkedinPassword",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "twitterLoginHandle",
+            "required": false,
+            "schema": {
+              "fullComment": "phone, email or username",
+              "type": "string"
+            }
+          },
+          {
+            "name": "twitterPassword",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "twitterApiKey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "twitterApiKeySecret",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "twitterBearerToken",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "twitterAccessToken",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "twitterAccessTokenSecret",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "twitterOAuth2ClientId",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "twitterOAuth2ClientSecret",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "facebookLoginHandle",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "facebookPassword",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "mediumLoginHandle",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "mediumPassword",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "redditLoginHandle",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "redditPassword",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "devtoLoginHandle",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "devtoPassword",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "slackLoginHandle",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "slackPassword",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "huggingfaceAuthToken",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "uberduckApiKey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "uberduckSecret",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "bananadevApiKey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "bananadevModelKeys",
+            "required": false,
+            "schema": {
+              "properties": [],
+              "type": "object"
+            }
+          }
+        ],
+        "type": "object"
+      },
+      "required": true
+    },
+    {
+      "name": "voice",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    },
+    {
+      "name": "text",
+      "schema": {
+        "anyOf": [
+          {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          {
+            "type": "string"
+          }
+        ]
+      },
+      "simplifiedSchema": {
+        "properties": [],
+        "type": "object"
+      },
+      "required": true
+    },
+    {
+      "name": "speed",
+      "schema": {
+        "type": "number"
+      },
+      "simplifiedSchema": {
+        "type": "number"
+      },
+      "required": false
+    },
+    {
+      "name": "quality",
+      "schema": {
+        "type": "string",
+        "enum": [
+          "low",
+          "medium",
+          "high",
+          "premium"
+        ]
+      },
+      "simplifiedSchema": {
+        "enum": [
+          "low",
+          "medium",
+          "high",
+          "premium"
+        ],
+        "type": "string"
+      },
+      "required": false
+    }
+  ],
+  "description": "returns a string with a url of a downloadable ogg",
+  "returnType": {
+    "rawType": "Promise<string | undefined>",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 411,
+    "lines": 18,
+    "bytes": 411,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 23,
+    "linesPerFile": 18,
+    "numberOfFiles": 1
+  },
+  "id": "ttpqnxqpaysvngxcguiugxvy"
+}

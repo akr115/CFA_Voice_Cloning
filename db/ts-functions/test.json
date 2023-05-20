@@ -1,0 +1,35 @@
+{
+  "createdAt": 1682926606414,
+  "updatedAt": 1682926606414,
+  "deletedAt": 0,
+  "createdFirstAt": 1682926606414,
+  "isApiExposed": false,
+  "isExported": false,
+  "operationRelativeTypescriptFilePath": "src/playhtRequest.test.ts",
+  "commentsInside": [],
+  "rawText": " async () => {\n  const persona = await getPersona();\n  if (!persona) {\n    return;\n  }\n\n  const result = await playhtRequest(persona, \"GET:getVoices\");\n\n  console.dir({ result }, { depth: 99 });\n}",
+  "name": "test",
+  "slug": "test",
+  "parameters": [],
+  "description": "https://docs.play.ht/reference/api-getting-started",
+  "returnType": {
+    "rawType": "any",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 246,
+    "lines": 10,
+    "bytes": 246,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 25,
+    "linesPerFile": 10,
+    "numberOfFiles": 1
+  },
+  "id": "shfdvpnhuveaspnuyetiocia"
+}
